@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="text-center m-10">
-      <h1 className="text-3xl my-6 font-bold text-blue-500">
+      <h1 className="text-5xl my-6 font-bold text-red-500">
         Get Countries Details
       </h1>
       <select
@@ -52,7 +52,7 @@ function App() {
       {selectCountry && singleCountry && (
         <div className="flex justify-center">
           <div className="w-96 min-h-96 border-2 rounded-lg border-sky-500 m-8 p-8 shadow-lg  rounded-">
-            <img src={singleCountry[0].flags.svg} />
+            <img src={singleCountry[0]?.flags.svg} />
             <h1 className="text-3xl my-2 font-bold">
               🌍 {singleCountry[0]?.name?.common}
             </h1>
