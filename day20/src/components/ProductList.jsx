@@ -18,6 +18,7 @@ const ProductList = () => {
         const uniqueCategories = [
           ...new Set(response.data.products.map((product) => product.category)),
         ];
+      
         setCategories(uniqueCategories);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -26,15 +27,17 @@ const ProductList = () => {
 
     fetchProducts();
   }, []);
+  
 
   const filteredProducts = selectedCategory
     ? products.filter((product) => product.category === selectedCategory)
     : products;
 
+
   return (
     <div>
       <h1 className="text-center text-3xl mt-10 font-bold">Products</h1>
-      <div className="category-filter flex justify-center items-center gap-4 mt-6">
+      <div className=" flex justify-center items-center gap-4 mt-6">
         <span className="text-2xl mb-6 font-semibold">Filter by Category:</span>
         <select
           value={selectedCategory}
@@ -49,7 +52,7 @@ const ProductList = () => {
           ))}
         </select>
       </div>
-      <div className="product-list grid grid-cols-4 justify-center items-center gap-4 bg-gray-50 p-10">
+      <div className="grid grid-cols-4 justify-center items-center gap-4 bg-gray-50 p-10">
         {filteredProducts.map((product) => (
           <Fade key={product.id} triggerOnce fraction={0.5}>
             <div className="product-card  flex flex-col items-center justify-center shadow-xl p-4">
