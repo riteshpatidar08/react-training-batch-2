@@ -18,7 +18,7 @@ const ProductList = () => {
         const uniqueCategories = [
           ...new Set(response.data.products.map((product) => product.category)),
         ];
-      
+
         setCategories(uniqueCategories);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -27,12 +27,10 @@ const ProductList = () => {
 
     fetchProducts();
   }, []);
-  
 
   const filteredProducts = selectedCategory
     ? products.filter((product) => product.category === selectedCategory)
     : products;
-
 
   return (
     <div>

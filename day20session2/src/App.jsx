@@ -1,12 +1,9 @@
-import { useState } from 'react';
-import FirstChild from './components/FirstChild';
-
+import NavBar from './components/NavBar';
+import './index.css';
 function App() {
-  const [data, setData] = useState('this is the data from parent');
-
   return (
     <>
-     
+      <NavBar />
     </>
   );
 }
